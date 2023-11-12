@@ -81,7 +81,7 @@ class Edit(marcel.core.Op):
         edit_command = f'{self.editor} {self.tmp_file}'
         process = subprocess.Popen(edit_command,
                                    shell=True,
-                                   executable='/usr/bin/env bash',
+                                   executable='/run/current-system/sw/bin/bash',
                                    universal_newlines=True)
         process.wait()
         with open(self.tmp_file, 'r') as input:
