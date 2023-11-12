@@ -31,7 +31,7 @@ def run(command, expected_err=None):
     else:
         process = subprocess.run(command,
                                  shell=True,
-                                 executable='/bin/bash',
+                                 executable='/usr/bin/env bash',
                                  capture_output=True,
                                  universal_newlines=True)
         actual_out = process.stdout

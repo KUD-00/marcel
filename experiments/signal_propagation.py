@@ -43,7 +43,7 @@ class Counter:
 def spawn():
     process = subprocess.Popen('python3 signal_propagation.py',
                                shell=True,
-                               executable='/bin/bash',
+                               executable='/usr/bin/env bash',
                                universal_newlines=True)
     while True:
         try:

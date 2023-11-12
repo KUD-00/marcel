@@ -5,7 +5,7 @@ import subprocess
 def run(command):
     process = subprocess.Popen(command,
                                shell=True,
-                               executable='/bin/bash',
+                               executable='/usr/bin/env bash',
                                stdin=subprocess.PIPE,
                                stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE,

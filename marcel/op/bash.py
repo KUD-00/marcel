@@ -181,7 +181,7 @@ class NonInteractive(Escape):
                 command = self.command()
                 self.process = subprocess.Popen(command,
                                                 shell=True,
-                                                executable='/bin/bash',
+                                                executable='/usr/bin/env bash',
                                                 stdin=subprocess.PIPE,
                                                 stdout=subprocess.PIPE,
                                                 stderr=subprocess.PIPE,
@@ -200,7 +200,7 @@ class Interactive(Escape):
         super().__init__(op)
         self.process = subprocess.Popen(self.command(),
                                         shell=True,
-                                        executable='/bin/bash',
+                                        executable='/usr/bin/env bash',
                                         universal_newlines=True,
                                         preexec_fn=os.setsid)
 
@@ -216,7 +216,7 @@ class BashShell(Escape):
         super().__init__(op)
         self.process = subprocess.Popen('bash',
                                         shell=True,
-                                        executable='/bin/bash',
+                                        executable='/usr/bin/env bash',
                                         universal_newlines=True)
 
     def receive(self, env, _):
